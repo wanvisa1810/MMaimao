@@ -1,18 +1,30 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
+    <ion-title>MaiMao</ion-title>
   </ion-navbar>
 </ion-header>
 
+<ion-item (click)="goToMenu()">
+  <ion-icon name="" item-start></ion-icon>Menu
+</ion-item>
+
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+ <img src="assets/imgs/logo mm.jpg">
+ <h2>Welcome to MaiMao</h2>
+ 
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+  <ion-list>
+    <ion-item>
+        <ion-icon name=""></ion-icon>  Username : 
+    </ion-item>
+    <ion-item>
+        <ion-icon name=""></ion-icon>  Password : 
+    </ion-item>
+      <ion-item (click)="gotoMenu()">
+          <button ion-button type="submit" block>Login</button>
+      </ion-item>
+      <ion-item (click)="gotoSignup()">
+          <button ion-button type="submit" block>Sign up</button>
+    </ion-item>
+  </ion-list>
 </ion-content>
