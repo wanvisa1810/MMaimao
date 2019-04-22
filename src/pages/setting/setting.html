@@ -11,22 +11,30 @@
 </ion-header>
 
 <ion-content padding>
-<h3>ตั้งค่าส่วนตัว</h3>
-<ion-list>
-  <ion-item>
-    <ion-icon name=""></ion-icon>  ชื่อ : 
-  </ion-item>
-  
-  <ion-item>
-    <ion-icon name=""></ion-icon>  E-Mail : 
-  </ion-item>
+<h5>แก้ไขข้อมูลส่วนตัว</h5>
 
-  <ion-item>
-    <ion-icon name=""></ion-icon>  เบอร์โทร : 
-  </ion-item>
-  <ion-item>
-  <button ion-button type="submit" block color="success">บันทึกข้อมูล</button>
-  </ion-item>
-</ion-list>
+  <form (ngSubmit)="addcustomer()">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>รหัสลูกค้า</ion-label>
+        <ion-input type="text" name="customerID" [(ngModel)]="customer.customerID"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>ชื่อลูกค้า</ion-label>
+        <ion-input type="text" name="customerName" [(ngModel)]="customer.customerName"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>เบอร์โทร</ion-label>
+        <ion-input type="text" name="customerTel" [(ngModel)]="customer.customerTel"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>E-Mail</ion-label>
+        <ion-input type="text" name="customerMail" [(ngModel)]="customer.customerMail"></ion-input>
+      </ion-item>
+        <button ion-button block>บันทึกข้อมูล</button>
+    </ion-list>
+  </form>
 </ion-content>
-

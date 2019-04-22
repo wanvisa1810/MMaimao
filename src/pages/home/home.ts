@@ -10,7 +10,11 @@ import { SignupPage } from '../signup/signup';
   templateUrl: 'home.html'
 })
 export class HomePage {
-
+  mlogig = {
+    lUsername:"",
+    lPassword:"",
+  }
+  data:any;
   constructor(public navCtrl: NavController) {
 
   }
@@ -24,4 +28,5 @@ export class HomePage {
   gotoSignup(){
     this.navCtrl.push(SignupPage);
   }
+
 }

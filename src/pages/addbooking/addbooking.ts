@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { StatusPage } from '../status/status';
+
+import { HttpClient } from '@angular/common/http';
+import { AlertController } from 'ionic-angular';
+
 
 //import { HttpClient } from '@angular/common/http';
 //import { AlertController } from 'ionic-angular';
@@ -26,34 +31,33 @@ export class AddbookingPage {
   }
   data:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams ,) {
+  constructor(public navCtrl: NavController, public navParams: NavParams ,private http: HttpClient, private alertCtrl:AlertController) {
   }
-  //private http: HttpClient, private alertCtrl:AlertController
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddbookingPage');
   }
 
-  //addCustomer(){
-  //  let url="http://localhost:8080/addbooking";
-  //  console.log(this.addbooking);
-  //  this.http.post(url, this.addbooking)
-  //    .subscribe(
-  //      res=>{
-  //          this.data = res;
-  //          if(this.data.msg==true){
-  //            this.showAlert("Success","Data added");
-  //            this.navCtrl.popToRoot();
-  //          }
-  //      }
-  //    ); 
-
-  //showAlert(msgTitle:string,message:string){
-    //const alert = this.alertCtrl.create({
-   //   title: msgTitle,
-    //  subTitle: message,
-  //    buttons: ["OK"]
-   // });
-   // alert.present();
-  //}
+  addBooking(){
+    let url="http://localhost:8080/addbooking";
+    console.log(this.addbooking);
+    this.http.post(url, this.addbooking)
+      .subscribe(
+        res=>{
+            this.data = res;
+            if(this.data.msg==true){
+              this.showAlert("Success","บันทึกการจอง");
+              this.navCtrl.push(StatusPage);
+          }
+        }
+      ); 
+  }
+  showAlert(msgTitle:string,message:string){
+    const alert = this.alertCtrl.create({
+     title: msgTitle,
+      subTitle: message,
+      buttons: ["OK"]
+    });
+   alert.present();
+ }
 }

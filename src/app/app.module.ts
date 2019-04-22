@@ -12,6 +12,7 @@ import { BookingPage } from '../pages/booking/booking';
 import { StatusPage } from '../pages/status/status';
 import { SettingPage } from '../pages/setting/setting';
 import { AddbookingPage } from '../pages/addbooking/addbooking';
+import { EditbookingPage } from '../pages/editbooking/editbooking';
 //import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -20,9 +21,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 
-//import { HttpModule } from '@angular/http';
+import { HttpModule } from '@angular/http';
 //import { HTTP } from '@ionic-native/http';
-//import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { SignupPage } from '../pages/signup/signup';
     StatusPage,
     SettingPage,
     AddbookingPage,
+    EditbookingPage,
     LoginPage,
     SignupPage
     
@@ -43,6 +45,8 @@ import { SignupPage } from '../pages/signup/signup';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    HttpModule,
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -56,6 +60,7 @@ import { SignupPage } from '../pages/signup/signup';
     StatusPage,
     SettingPage,
     AddbookingPage,
+    EditbookingPage,
     LoginPage,
     SignupPage
   ],
