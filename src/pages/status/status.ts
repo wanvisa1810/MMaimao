@@ -18,9 +18,10 @@ import 'rxjs/add/operator/map';
 })
 export class StatusPage {
   addbooking :any=0;
+
   constructor(public navCtrl: NavController, public navParams: NavParams ,public http: Http) {
-    let bkID=this.navParams.get('bkID');
-    let url = "http://localhost:8080/addbooking/" + bkID;
+    let bkId=this.navParams.get('bkID');
+    let url = "http://localhost:8080/addbooking/" + bkId;
     console.log(url);
     this.http.get(url)
     .map(res=>res.json())
